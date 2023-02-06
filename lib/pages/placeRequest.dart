@@ -6,7 +6,6 @@ import 'package:visitor_hostel/helperWidget/datePicker.dart';
 
 // ignore: camel_case_types
 class PlaceRequest extends StatefulWidget {
-
   @override
   State<PlaceRequest> createState() => _PlaceRequestState();
 }
@@ -38,152 +37,163 @@ class _PlaceRequestState extends State<PlaceRequest> {
         body: Column(
           children: <Widget>[
             SizedBox(height: 24.0),
-            Expanded
-            (
+            Expanded(
               child: Container(
                 height: double.infinity,
-              width: double.infinity,
-                  decoration: const BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(30),
-                          topRight: Radius.circular(30))),
-                  child: Column(
-                    children: [
-                       SizedBox(height: 24.0),
-                      const Text(
-                                "Place a request",
-                                style: TextStyle(
-                                    fontSize: 32, fontWeight: FontWeight.w700),
-                              ),
-                      SizedBox(height: 24.0),
-                      const Text("Booking Details",
-                                      style: TextStyle(
-                                          fontSize: 14, fontWeight: FontWeight.bold)),
-                      Row(
-                        children: [
-                          SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.5,
-                            child: Padding(
-                              padding: const EdgeInsets.all(12.0),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  const SizedBox(height: 16),
-                                  const Text("Arrival Date"),
-                                  const SizedBox(height: 8),
-                                  SizedBox(
-                                      height: 32,
-                                      width: MediaQuery.of(context).size.width * 0.3,
-                                      child: const DatePicker()),
-                                  const SizedBox(height: 16),
-                                  const Text("Departure Date"),
-                                  const SizedBox(height: 8),
-                                  SizedBox(
-                                      height: 32,
-                                      width: MediaQuery.of(context).size.width * 0.3,
-                                      child: const DatePicker()),
-                                  const SizedBox(height: 16),
-                                  const Text(
-                                    "Category",
-                                  ),
-                                  DropdownButton2(
-                                    hint: const Text("Select Catagory"),
-                                    focusColor: Colors.white,
-                                    icon: const Icon(Icons.arrow_drop_down),
-                                    value: valueChose,
-                                    onChanged: (newValue) {
-                                      setState(() {
-                                        valueChose = newValue;
-                                      });
-                                    },
-                                    items: items.map((valueItem) {
-                                      return DropdownMenuItem(
-                                        value: valueItem,
-                                        child: Text(valueItem),
-                                      );
-                                    }).toList(),
-                                  ),
-                                  const SizedBox(height: 16),
-                                  const Text(
-                                    "Number of People",
-                                  ),
-                                  const SizedBox(height: 8),
-                                  Container(
-                                    alignment: Alignment.center,
-                                    height: 32,
-                                    width: 94,
-                                    decoration: const BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.all(Radius.circular(5))),
-                                    child: Row(
-                                      children: [
-                                        GestureDetector(
-                                          onTap: () {
-                                            setState(() {
-                                              if (count > 0) {
-                                                count--;
-                                              }
-                                            });
-                                          },
-                                          child: Container(
-                                              width: 30,
-                                              alignment: Alignment.center,
-                                              decoration: BoxDecoration(
-                                                  color: Colors.grey.withOpacity(0.3),
-                                                  borderRadius: const BorderRadius.all(
-                                                      Radius.circular(5)),
-                                                  border: Border.all(
-                                                      color: Colors.black, width: 1)),
-                                              child: const Icon(
-                                                Icons.remove,
-                                                size: 20,
-                                              )),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Text(count.toString()),
-                                        ),
-                                        GestureDetector(
-                                          onTap: () {
-                                            setState(() {
-                                              count++;
-                                            });
-                                          },
-                                          child: Container(
-                                              width: 30,
-                                              alignment: Alignment.center,
-                                              decoration: BoxDecoration(
-                                                  color: Colors.grey.withOpacity(0.3),
-                                                  borderRadius: const BorderRadius.all(
-                                                      Radius.circular(5)),
-                                                  border: Border.all(
-                                                      color: Colors.black, width: 1)),
-                                              child: const Icon(
-                                                Icons.add,
-                                                size: 20,
-                                              )),
-                                        )
-                                      ],
+                width: double.infinity,
+                decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(30),
+                        topRight: Radius.circular(30))),
+                child: SingleChildScrollView(
+                    padding: const EdgeInsets.all(12),
+                    child: Column(
+                      children: [
+                        SizedBox(height: 24.0),
+                        const Text(
+                          "Place a request",
+                          style: TextStyle(
+                              fontSize: 32, fontWeight: FontWeight.w700),
+                        ),
+                        SizedBox(height: 24.0),
+                        const Text("Booking Details",
+                            style: TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.bold)),
+                        Row(
+                          children: [
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.4,
+                              child: Padding(
+                                padding: const EdgeInsets.all(12.0),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    const Text("Arrival Date"),
+                                    const SizedBox(height: 8),
+                                    SizedBox(
+                                        height: 32,
+                                        width:
+                                            MediaQuery.of(context).size.width *
+                                                0.3,
+                                        child: const DatePicker()),
+                                    const SizedBox(height: 16),
+                                    const Text("Departure Date"),
+                                    const SizedBox(height: 8),
+                                    SizedBox(
+                                        height: 32,
+                                        width:
+                                            MediaQuery.of(context).size.width *
+                                                0.3,
+                                        child: const DatePicker()),
+                                    const SizedBox(height: 16),
+                                    const Text(
+                                      "Select Category",
                                     ),
-                                  ),
-                                  const SizedBox(height: 16),
-                                  const Text(
-                                    "Remarks",
-                                  ),
-                                  const SizedBox(height: 8),
-                                  const TextField(
-                                    maxLines: 5,
-                                  )
-                                ],
+                                    DropdownButton2(
+                                      hint: const Text("Catagory"),
+                                      focusColor: Colors.white,
+                                      icon: const Icon(Icons.arrow_drop_down),
+                                      value: valueChose,
+                                      onChanged: (newValue) {
+                                        setState(() {
+                                          valueChose = newValue;
+                                        });
+                                      },
+                                      items: items.map((valueItem) {
+                                        return DropdownMenuItem(
+                                          value: valueItem,
+                                          child: Text(valueItem),
+                                        );
+                                      }).toList(),
+                                    ),
+                                    const SizedBox(height: 16),
+                                    const Text(
+                                      "Number of People",
+                                    ),
+                                    const SizedBox(height: 8),
+                                    Container(
+                                      alignment: Alignment.center,
+                                      height: 32,
+                                      width: 94,
+                                      decoration: const BoxDecoration(
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(5))),
+                                      child: Row(
+                                        children: [
+                                          GestureDetector(
+                                            onTap: () {
+                                              setState(() {
+                                                if (count > 0) {
+                                                  count--;
+                                                }
+                                              });
+                                            },
+                                            child: Container(
+                                                width: 30,
+                                                alignment: Alignment.center,
+                                                decoration: BoxDecoration(
+                                                    color: Colors.grey
+                                                        .withOpacity(0.3),
+                                                    borderRadius:
+                                                        const BorderRadius.all(
+                                                            Radius.circular(5)),
+                                                    border: Border.all(
+                                                        color: Colors.black,
+                                                        width: 1)),
+                                                child: const Icon(
+                                                  Icons.remove,
+                                                  size: 20,
+                                                )),
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Text(count.toString()),
+                                          ),
+                                          GestureDetector(
+                                            onTap: () {
+                                              setState(() {
+                                                count++;
+                                              });
+                                            },
+                                            child: Container(
+                                                width: 30,
+                                                alignment: Alignment.center,
+                                                decoration: BoxDecoration(
+                                                    color: Colors.grey
+                                                        .withOpacity(0.3),
+                                                    borderRadius:
+                                                        const BorderRadius.all(
+                                                            Radius.circular(5)),
+                                                    border: Border.all(
+                                                        color: Colors.black,
+                                                        width: 1)),
+                                                child: const Icon(
+                                                  Icons.add,
+                                                  size: 20,
+                                                )),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    const SizedBox(height: 16),
+                                    const Text(
+                                      "Remarks",
+                                    ),
+                                    const SizedBox(height: 8),
+                                    const TextField(
+                                      maxLines: 5,
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
-                          ),
-                          side()
-                        ],
-                      ),
-                    ],
-                  )),
+                            side()
+                          ],
+                        ),
+                      ],
+                    )),
+              ),
             ),
           ],
         ));
@@ -192,12 +202,12 @@ class _PlaceRequestState extends State<PlaceRequest> {
   Widget side() {
     return SizedBox(
       width: MediaQuery.of(context).size.width * 0.5,
-      child: Padding(
-        padding: const EdgeInsets.all(12.0),
+      child: SingleChildScrollView(
+        padding: const EdgeInsets.all(12),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            const SizedBox(height: 30),
+            const SizedBox(height: 10),
             const Text("Arrival Time"),
             TextField(
               controller: controller, //editing controller of this TextField
@@ -331,7 +341,7 @@ class _PlaceRequestState extends State<PlaceRequest> {
               "Purpose of Visit",
             ),
             const TextField(),
-            const SizedBox(height: 80),
+            const SizedBox(height: 60),
             TextButton(
                 style: ButtonStyle(
                   foregroundColor:
