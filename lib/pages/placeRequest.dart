@@ -207,7 +207,6 @@ class _PlaceRequestState extends State<PlaceRequest> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            const SizedBox(height: 10),
             const Text("Arrival Time"),
             TextField(
               controller: controller, //editing controller of this TextField
