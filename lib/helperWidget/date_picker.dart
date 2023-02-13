@@ -9,7 +9,6 @@ class DatePicker extends StatefulWidget {
   State<DatePicker> createState() => _MyStatefulWidgetState();
 }
 
-/// RestorationProperty objects can be used because of RestorationMixin.
 class _MyStatefulWidgetState extends State<DatePicker> with RestorationMixin {
   DateTime date = DateTime(2023, 02, 01);
   String _date =
@@ -71,27 +70,27 @@ class _MyStatefulWidgetState extends State<DatePicker> with RestorationMixin {
   @override
   Widget build(BuildContext context) {
     return Column(
-        children: [
-    Expanded(
-      child: OutlinedButton(
-          onPressed: () {
-            _restorableDatePickerRouteFuture.present();
-          },
-          child: Expanded(
-            child: Row(
-              children: [
-                const Icon(Icons.calendar_month),
-                Expanded(
-                  child: Text(
-                    _date,
-                    style: const TextStyle(fontSize: 14),
-                  ),
+      children: [
+        Expanded(
+          child: OutlinedButton(
+              onPressed: () {
+                _restorableDatePickerRouteFuture.present();
+              },
+              child: Expanded(
+                child: Row(
+                  children: [
+                    const Icon(Icons.calendar_month),
+                    Expanded(
+                      child: Text(
+                        _date,
+                        style: const TextStyle(fontSize: 14),
+                      ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
-          )),
-    ),
-        ],
-      );
+              )),
+        ),
+      ],
+    );
   }
 }

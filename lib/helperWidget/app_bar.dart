@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-
 class CustomAppBar extends StatelessWidget {
+  const CustomAppBar({super.key});
+
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -9,14 +10,13 @@ class CustomAppBar extends StatelessWidget {
         onTap: () {
           Navigator.pop(context);
         },
-        child: Icon(Icons.arrow_back, color: Colors.white),
+        child: const Icon(Icons.arrow_back, color: Colors.white),
       ),
-      title: Text("Visitor Hostel"),
+      title: const Text("Visitor Hostel"),
       backgroundColor: Colors.black,
-      // ignore: prefer_const_literals_to_create_immutables
-      actions: <Widget>[
+      actions: const <Widget>[
         Padding(
-          padding: const EdgeInsets.only(right: 16.0),
+          padding: EdgeInsets.only(right: 16.0),
           child: CircleAvatar(
             backgroundColor: Colors.white,
             child: Text("A"),

@@ -1,11 +1,16 @@
-import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
 import 'package:intl/intl.dart';
-import 'package:visitor_hostel/helperWidget/appBar.dart';
-import 'package:visitor_hostel/helperWidget/datePicker.dart';
+
+// ignore: depend_on_referenced_packages
+import 'package:dropdown_button2/dropdown_button2.dart';
+import 'package:visitor_hostel/helperWidget/app_bar.dart';
+import 'package:visitor_hostel/helperWidget/date_picker.dart';
 
 // ignore: camel_case_types
 class PlaceRequest extends StatefulWidget {
+  const PlaceRequest({super.key});
+
   @override
   State<PlaceRequest> createState() => _PlaceRequestState();
 }
@@ -30,13 +35,13 @@ class _PlaceRequestState extends State<PlaceRequest> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.black,
-        appBar: PreferredSize(
+        appBar: const PreferredSize(
           preferredSize: Size.fromHeight(kToolbarHeight),
           child: CustomAppBar(),
         ),
         body: Column(
           children: <Widget>[
-            SizedBox(height: 24.0),
+            const SizedBox(height: 24.0),
             Expanded(
               child: Container(
                 height: double.infinity,
@@ -50,13 +55,13 @@ class _PlaceRequestState extends State<PlaceRequest> {
                     padding: const EdgeInsets.all(12),
                     child: Column(
                       children: [
-                        SizedBox(height: 24.0),
+                        const SizedBox(height: 24.0),
                         const Text(
                           "Place a request",
                           style: TextStyle(
                               fontSize: 32, fontWeight: FontWeight.w700),
                         ),
-                        SizedBox(height: 24.0),
+                        const SizedBox(height: 24.0),
                         const Text("Booking Details",
                             style: TextStyle(
                                 fontSize: 14, fontWeight: FontWeight.bold)),

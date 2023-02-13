@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:visitor_hostel/pages/cancelRequest.dart';
-import 'package:visitor_hostel/pages/placeRequest.dart';
-import 'package:visitor_hostel/pages/viewBookings.dart';
-import 'package:visitor_hostel/pages/activeBookings.dart';
-import 'package:visitor_hostel/pages/completedBookings.dart';
+import 'package:visitor_hostel/pages/cancel_request.dart';
+import 'package:visitor_hostel/pages/place_request.dart';
+import 'package:visitor_hostel/pages/view_bookings.dart';
+import 'package:visitor_hostel/pages/completed_bookings.dart';
 
-class VisitorHostelCaretaker extends StatefulWidget {
+class VisitorHostelIncharge extends StatefulWidget {
+  const VisitorHostelIncharge({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _VisitorHostelState createState() => _VisitorHostelState();
 }
 
-class _VisitorHostelState extends State<VisitorHostelCaretaker> {
+class _VisitorHostelState extends State<VisitorHostelIncharge> {
   bool _isDropdownVisible = false;
 
   @override
@@ -18,16 +20,16 @@ class _VisitorHostelState extends State<VisitorHostelCaretaker> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        leading: Icon(Icons.menu, color: Colors.white),
-        title: Text("Visitor Hostel"),
+        leading: const Icon(Icons.menu, color: Colors.white),
+        title: const Text("Visitor Hostel"),
         backgroundColor: Colors.black,
         // ignore: prefer_const_literals_to_create_immutables
         actions: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(right: 16.0),
+          const Padding(
+            padding: EdgeInsets.only(right: 16.0),
             child: CircleAvatar(
               backgroundColor: Colors.white,
-              child: Text("C"),
+              child: Text("I"),
             ),
           ),
         ],
@@ -35,12 +37,12 @@ class _VisitorHostelState extends State<VisitorHostelCaretaker> {
       ),
       body: Column(
         children: <Widget>[
-          SizedBox(height: 24.0),
+          const SizedBox(height: 24.0),
           Expanded(
             child: Container(
               height: double.infinity,
               width: double.infinity,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Color.fromARGB(255, 248, 247, 247),
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(30.0),
@@ -51,8 +53,8 @@ class _VisitorHostelState extends State<VisitorHostelCaretaker> {
                 padding: const EdgeInsets.all(12),
                 child: Column(
                   children: <Widget>[
-                    SizedBox(height: 24.0),
-                    Container(
+                    const SizedBox(height: 24.0),
+                    SizedBox(
                       width: MediaQuery.of(context).size.width * 0.8,
                       child: MaterialButton(
                         height: 60.0,
@@ -62,8 +64,8 @@ class _VisitorHostelState extends State<VisitorHostelCaretaker> {
                           });
                         },
                         color: Colors.white,
-                        textColor: Color.fromARGB(255, 59, 59, 59),
-                        shape: RoundedRectangleBorder(
+                        textColor: const Color.fromARGB(255, 59, 59, 59),
+                        shape: const RoundedRectangleBorder(
                           borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(5.0),
                             topRight: Radius.circular(5.0),
@@ -74,7 +76,7 @@ class _VisitorHostelState extends State<VisitorHostelCaretaker> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
-                            Text('Manage Bookings',
+                            const Text('Manage Bookings',
                                 style: TextStyle(fontSize: 18.0)),
                             Icon(
                                 _isDropdownVisible
@@ -85,13 +87,13 @@ class _VisitorHostelState extends State<VisitorHostelCaretaker> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 16.0),
+                    const SizedBox(height: 16.0),
                     _isDropdownVisible
                         ? Padding(
                             padding: const EdgeInsets.only(bottom: 16.0),
                             child: Container(
                               width: MediaQuery.of(context).size.width * 0.8,
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.only(
                                   topLeft: Radius.circular(5.0),
@@ -108,84 +110,69 @@ class _VisitorHostelState extends State<VisitorHostelCaretaker> {
                                 ],
                               ),
                               child: Padding(
-                                padding: EdgeInsets.all(16.0),
+                                padding: const EdgeInsets.all(16.0),
                                 child: Column(
                                   children: <Widget>[
-                                    SizedBox(height: 9.0),
+                                    const SizedBox(height: 9.0),
                                     GestureDetector(
                                       onTap: () {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  ViewBookings()),
+                                                  const ViewBookings()),
                                         );
                                       },
-                                      child: Text("Bookings"),
+                                      child: const Text("Bookings"),
                                     ),
-                                    SizedBox(height: 9.0),
-                                    Divider(
+                                    const SizedBox(height: 9.0),
+                                    const Divider(
                                       thickness: 1.0,
                                     ),
-                                    SizedBox(height: 9.0),
+                                    const SizedBox(height: 9.0),
                                     GestureDetector(
                                       onTap: () {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  CancelledBookings()),
+                                                  const CancelledBookings()),
                                         );
                                       },
-                                      child: Text("Cancellation Requests"),
+                                      child:
+                                          const Text("Cancellation Requests"),
                                     ),
-                                    SizedBox(height: 9.0),
-                                    Divider(
+                                    const SizedBox(height: 9.0),
+                                    const Divider(
                                       thickness: 1.0,
                                     ),
-                                    SizedBox(height: 9.0),
+                                    const SizedBox(height: 9.0),
                                     GestureDetector(
                                       onTap: () {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  ActiveBookings()),
+                                                  const CompletedBookings()),
                                         );
                                       },
-                                      child: Text("Active Bookings"),
+                                      child: const Text("Completed Bookings"),
                                     ),
-                                    SizedBox(height: 9.0),
-                                    Divider(
-                                      thickness: 1.0,
-                                    ),
-                                    SizedBox(height: 9.0),
-                                    GestureDetector(
-                                      onTap: () {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  CompletedBookings()),
-                                        );
-                                      },
-                                      child: Text("Completed Bookings"),
-                                    ),
-                                    SizedBox(height: 9.0),
+                                    const SizedBox(height: 9.0),
                                   ],
                                 ),
                               ),
                             ),
                           )
-                        : SizedBox.shrink(),
-                    Container(
+                        : const SizedBox.shrink(),
+                    SizedBox(
                       width: MediaQuery.of(context).size.width * 0.8,
                       child: MaterialButton(
                           height: 60.0,
                           onPressed: () {},
                           color: Colors.white,
                           textColor: Colors.black,
-                          shape: RoundedRectangleBorder(
+                          shape: const RoundedRectangleBorder(
                             borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(5.0),
                               topRight: Radius.circular(5.0),
@@ -193,18 +180,18 @@ class _VisitorHostelState extends State<VisitorHostelCaretaker> {
                               bottomRight: Radius.circular(5.0),
                             ),
                           ),
-                          child: Text('Booking Form',
+                          child: const Text('Booking Form',
                               style: TextStyle(fontSize: 18.0))),
                     ),
-                    SizedBox(height: 16.0),
-                    Container(
+                    const SizedBox(height: 16.0),
+                    SizedBox(
                       width: MediaQuery.of(context).size.width * 0.8,
                       child: MaterialButton(
                           height: 60.0,
                           onPressed: () {},
                           color: Colors.white,
                           textColor: Colors.black,
-                          shape: RoundedRectangleBorder(
+                          shape: const RoundedRectangleBorder(
                             borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(5.0),
                               topRight: Radius.circular(5.0),
@@ -212,18 +199,18 @@ class _VisitorHostelState extends State<VisitorHostelCaretaker> {
                               bottomRight: Radius.circular(5.0),
                             ),
                           ),
-                          child: Text('Get Details',
+                          child: const Text('Get Details',
                               style: TextStyle(fontSize: 18.0))),
                     ),
-                    SizedBox(height: 16.0),
-                    Container(
+                    const SizedBox(height: 16.0),
+                    SizedBox(
                       width: MediaQuery.of(context).size.width * 0.8,
                       child: MaterialButton(
                           height: 60.0,
                           onPressed: () {},
                           color: Colors.white,
                           textColor: Colors.black,
-                          shape: RoundedRectangleBorder(
+                          shape: const RoundedRectangleBorder(
                             borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(5.0),
                               topRight: Radius.circular(5.0),
@@ -231,18 +218,18 @@ class _VisitorHostelState extends State<VisitorHostelCaretaker> {
                               bottomRight: Radius.circular(5.0),
                             ),
                           ),
-                          child: Text('Meals Record',
+                          child: const Text('Meals Record',
                               style: TextStyle(fontSize: 18.0))),
                     ),
-                    SizedBox(height: 16.0),
-                    Container(
+                    const SizedBox(height: 16.0),
+                    SizedBox(
                       width: MediaQuery.of(context).size.width * 0.8,
                       child: MaterialButton(
                           height: 60.0,
                           onPressed: () {},
                           color: Colors.white,
                           textColor: Colors.black,
-                          shape: RoundedRectangleBorder(
+                          shape: const RoundedRectangleBorder(
                             borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(5.0),
                               topRight: Radius.circular(5.0),
@@ -250,18 +237,18 @@ class _VisitorHostelState extends State<VisitorHostelCaretaker> {
                               bottomRight: Radius.circular(5.0),
                             ),
                           ),
-                          child: Text('Inventory',
+                          child: const Text('Inventory',
                               style: TextStyle(fontSize: 18.0))),
                     ),
-                    SizedBox(height: 16.0),
-                    Container(
+                    const SizedBox(height: 16.0),
+                    SizedBox(
                       width: MediaQuery.of(context).size.width * 0.8,
                       child: MaterialButton(
                           height: 60.0,
                           onPressed: () {},
                           color: Colors.white,
                           textColor: Colors.black,
-                          shape: RoundedRectangleBorder(
+                          shape: const RoundedRectangleBorder(
                             borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(5.0),
                               topRight: Radius.circular(5.0),
@@ -269,18 +256,18 @@ class _VisitorHostelState extends State<VisitorHostelCaretaker> {
                               bottomRight: Radius.circular(5.0),
                             ),
                           ),
-                          child: Text('Accounts',
+                          child: const Text('Accounts',
                               style: TextStyle(fontSize: 18.0))),
                     ),
-                    SizedBox(height: 16.0),
-                    Container(
+                    const SizedBox(height: 16.0),
+                    SizedBox(
                       width: MediaQuery.of(context).size.width * 0.8,
                       child: MaterialButton(
                           height: 60.0,
                           onPressed: () {},
                           color: Colors.white,
                           textColor: Colors.black,
-                          shape: RoundedRectangleBorder(
+                          shape: const RoundedRectangleBorder(
                             borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(5.0),
                               topRight: Radius.circular(5.0),
@@ -288,18 +275,18 @@ class _VisitorHostelState extends State<VisitorHostelCaretaker> {
                               bottomRight: Radius.circular(5.0),
                             ),
                           ),
-                          child: Text('Bill Details',
+                          child: const Text('Bill Details',
                               style: TextStyle(fontSize: 18.0))),
                     ),
-                    SizedBox(height: 16.0),
-                    Container(
+                    const SizedBox(height: 16.0),
+                    SizedBox(
                       width: MediaQuery.of(context).size.width * 0.8,
                       child: MaterialButton(
                           height: 60.0,
                           onPressed: () {},
                           color: Colors.white,
                           textColor: Colors.black,
-                          shape: RoundedRectangleBorder(
+                          shape: const RoundedRectangleBorder(
                             borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(5.0),
                               topRight: Radius.circular(5.0),
@@ -307,11 +294,11 @@ class _VisitorHostelState extends State<VisitorHostelCaretaker> {
                               bottomRight: Radius.circular(5.0),
                             ),
                           ),
-                          child: Text('Rules and Regulations',
+                          child: const Text('Rules and Regulations',
                               style: TextStyle(fontSize: 18.0))),
                     ),
-                    SizedBox(height: 16.0),
-                    Container(
+                    const SizedBox(height: 16.0),
+                    SizedBox(
                       width: MediaQuery.of(context).size.width * 0.6,
                       child: MaterialButton(
                           height: 60.0,
@@ -319,12 +306,12 @@ class _VisitorHostelState extends State<VisitorHostelCaretaker> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => PlaceRequest()),
+                                  builder: (context) => const PlaceRequest()),
                             );
                           },
-                          color: Color.fromARGB(255, 243, 33, 33),
+                          color: const Color.fromARGB(255, 243, 33, 33),
                           textColor: Colors.white,
-                          shape: RoundedRectangleBorder(
+                          shape: const RoundedRectangleBorder(
                             borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(5.0),
                               topRight: Radius.circular(5.0),
@@ -332,7 +319,7 @@ class _VisitorHostelState extends State<VisitorHostelCaretaker> {
                               bottomRight: Radius.circular(5.0),
                             ),
                           ),
-                          child: Text('Place Request',
+                          child: const Text('Place Request',
                               style: TextStyle(fontSize: 18.0))),
                     ),
                   ],

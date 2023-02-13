@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:visitor_hostel/pages/activeBookings.dart';
-import 'package:visitor_hostel/pages/cancelRequest.dart';
-import 'package:visitor_hostel/pages/completedBookings.dart';
-import 'package:visitor_hostel/pages/visitorsHostel.dart';
-import 'package:visitor_hostel/pages/viewBookings.dart'; 
+import 'package:visitor_hostel/pages/active_bookings.dart';
+import 'package:visitor_hostel/pages/cancel_request.dart';
+import 'package:visitor_hostel/pages/completed_bookings.dart';
+import 'package:visitor_hostel/pages/visitors_hostel.dart';
+import 'package:visitor_hostel/pages/view_bookings.dart';
 
-void main() => runApp(MaterialApp(
-    initialRoute: '/',
-    routes: {
-      '/': (context) => VisitorHostel(),
-      '/viewBooking':(context) => ViewBookings(),
-      '/cancelledBookings':(context) => CancelledBookings(),
-      '/activeBooking':(context) => ActiveBookings(),
-      '/completedBooking':(context) => CompletedBookings()
-    }
-));
+void main() => runApp(MaterialApp(initialRoute: '/', routes: {
+      '/': (context) => const VisitorHostel(),
+      '/viewBooking': (context) => const ViewBookings(),
+      '/cancelledBookings': (context) => const CancelledBookings(),
+      '/activeBooking': (context) => const ActiveBookings(),
+      '/completedBooking': (context) => const CompletedBookings()
+    }));
