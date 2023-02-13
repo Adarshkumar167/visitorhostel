@@ -5,6 +5,7 @@ import 'package:visitor_hostel/pages/viewBookings.dart';
 import 'package:visitor_hostel/pages/activeBookings.dart';
 import 'package:visitor_hostel/pages/completedBookings.dart';
 import 'package:visitor_hostel/pages/visitorsHostelsCaretaker.dart';
+import 'package:visitor_hostel/pages/visitorHostelsIncharge.dart';
 
 class VisitorHostel extends StatefulWidget {
   @override
@@ -262,6 +263,31 @@ class _VisitorHostelState extends State<VisitorHostel> {
                           ),
                         ),
                         child: Text('Caretaker Login',
+                            style: TextStyle(fontSize: 18.0))),
+                  ),
+                  SizedBox(height: 16.0),
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.6,
+                    child: MaterialButton(
+                        height: 60.0,
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => VisitorHostelIncharge()),
+                          );
+                        },
+                        color: Color.fromARGB(255, 243, 33, 33),
+                        textColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(5.0),
+                            topRight: Radius.circular(5.0),
+                            bottomLeft: Radius.circular(5.0),
+                            bottomRight: Radius.circular(5.0),
+                          ),
+                        ),
+                        child: Text('Incharge Login',
                             style: TextStyle(fontSize: 18.0))),
                   ),
                 ],
